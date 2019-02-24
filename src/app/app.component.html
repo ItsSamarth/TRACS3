@@ -1,21 +1,135 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div style="height: 100vh;">
 
+  <mat-toolbar color="primary">
+    <a routerLink="/home"><span><img class="navBar-img" src="/assets/CAP-Seal-75x75.png" height=60 width=60 ></span></a>
+
+    <span class="lg-view" fxHide.lt-md>
+      <b class="cawg">CAWG</b>&nbsp;&nbsp;
+      <b class="cawg-header">T</b><span class="cawg-text">racking and </span>
+      <b class="cawg-header">R</b><span class="cawg-text">emote&nbsp;</span>
+      <b class="cawg-header">A</b><span class="cawg-text">ircraft&nbsp;</span> 
+      <b class="cawg-header">C</b><span class="cawg-text">ommunication&nbsp;</span>
+      <b class="cawg-header">S</b><span class="cawg-text">ystem (TRACS) </span>
+      <span class="cawg-text">3.0</span>
+  </span>
+  <span class="sm-view" fxHide.gt-sm>
+    <b class="cawg-text">TRACS3</b>
+  </span>
+
+    <span class="flex-spacer"></span>
+
+    <div fxShow="true" fxHide.lt-md="true">
+
+      <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+
+      <button mat-icon-button class="d-none d-sm-inline" [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+    <mat-menu #menu="matMenu" [overlapTrigger]="false">
+        <button mat-menu-item >
+          <mat-icon>airplanemode_active</mat-icon>
+          <span>Real-time Tracking</span>
+        </button>
+        <button mat-menu-item (click)="historicalTracking()">
+          <mat-icon svgIcon="historical-tracking-black-48-inactive" style="color: black"></mat-icon>
+          <span>Historical Tracking</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>grid_on</mat-icon>
+          <span>Display Grids</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>airplanemode_inactive</mat-icon>
+          <span>Stop Tracking</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>grid_off</mat-icon>
+          <span>Grids Off</span>
+        </button>
+    </mat-menu>
+    <button mat-icon-button  routerLink="/settings" class="d-none d-sm-inline">
+        <mat-icon>settings</mat-icon>
+    </button>
+    <button mat-icon-button routerLink=""  class="d-none d-sm-inline">
+      <mat-icon>chat_bubble_outline</mat-icon>
+    </button>
+    <button mat-icon-button routerLink="/bugreport"  class="d-none d-sm-inline">
+      <mat-icon>bug_report</mat-icon>
+    </button>
+    <button mat-icon-button routerLink="/about"  class="d-none d-sm-inline">
+      <mat-icon>info</mat-icon>
+    </button>
+    <button mat-button routerLink="login"  class="nav-button">
+      Sign In
+    </button>
+
+    </div>
+
+    <div fxShow="true" fxHide.gt-sm="true">
+
+      <a href="#" (click)="sidenav.toggle()"><mat-icon aria-label="Side nav toggle icon" >menu</mat-icon></a>
+
+    </div>
+
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill class="example-container">
+
+    <mat-sidenav #sidenav fxLayout="column">
+
+      <div fxLayout="column">
+
+
+        <mat-nav-list>
+          <mat-list-item >
+          <mat-icon>airplanemode_active</mat-icon>
+          <a matLine href="#" >Real-Time Tracking</a>
+        </mat-list-item>
+        <mat-list-item >
+          <mat-icon svgIcon="historical-tracking-black-48" style="color: black;"></mat-icon>
+          <a matLine href="#" >Historical Tracking</a>
+        </mat-list-item>
+        <mat-list-item >
+            <mat-icon>grid_on</mat-icon>
+            <a matLine href="#" >Display Grids</a>
+        </mat-list-item>
+        <mat-list-item >
+            <mat-icon>airplanemode_inactive</mat-icon>
+            <a matLine href="#" >Stop Tracking</a>
+        </mat-list-item>
+        <mat-list-item >
+            <mat-icon>grid_off</mat-icon>
+            <a matLine href="#" >Grids Off</a>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon>settings</mat-icon>
+          <a matLine routerLink="/settings" >Settings</a> 
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon>chat_bubble_outline</mat-icon>
+          <a matLine href="#" >Toggle Chat Window</a> 
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon>bug_report</mat-icon>
+          <a matLine routerLink="/bugreport" >Report Issue</a>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon>info</mat-icon>
+          <a matLine routerLink-="about" >About</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a matLine routerLink="login" >Sign In</a>
+        </mat-list-item>
+        </mat-nav-list>
+
+      </div>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content fxFlexFill><ng-content></ng-content></mat-sidenav-content>
+
+  </mat-sidenav-container>
+
+</div>
 <router-outlet></router-outlet>
+

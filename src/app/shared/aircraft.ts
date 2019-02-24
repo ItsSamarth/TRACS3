@@ -1,0 +1,31 @@
+export class Aircraft {
+  "IMEI": string;
+  "DeviceName": string;
+  "TailNumber": string;
+  "EmptyWeight": 0;
+  "CG_ARM": 0;
+  "Moment": 0;
+  "Year": string;
+  "Model": string;
+  "Serial": string;
+  "AirportID": string;
+  "ACMgrName": string;
+  "ACMgrPhone": string;
+  "ACMgrPhoneShort": string;
+  "UnitCmdrName": string;
+  "UnitCmdrPhone": string;
+  "UnitCmdrPhoneShort": string;
+  "power12volt": string;
+  "DirectionFinder": string;
+  "GPS": string;
+  "ADSB": string;
+  "CAPFM": string;
+  "VirbMount": string;
+  "CameraWindow": string;
+  "APAWS": true;
+  "AutoPilot": string;
+  "EngAnalyzer": string;
+  "Turbo": true;
+  "PolyColor": string;
+  "ForeFlightWBProfile": string
+}

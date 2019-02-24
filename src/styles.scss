@@ -1,1 +1,74 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import '@angular/material/_theming.scss';
+
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+// always include once per project
+@include mat-core();
+
+$primary: mat-palette($mat-lime, 500);
+$accent:  mat-palette($mat-lime, 500, A200, A400);
+$warn:    mat-palette($mat-red, 500);
+
+//$config: mat-typography-config();
+
+
+$theme: mat-light-theme($primary, $accent, $warn);
+
+
+@include angular-material-theme($theme);
+
+// some basic resets 
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* optional: just make scrollbar invisible */
+}
+.container {
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+.container::-webkit-scrollbar { /* WebKit */
+  width: 0;
+  height: 0;
+}
+body > div {
+  height: 100%;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+.mat-toolbar {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  //border: 1px solid;
+}
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 300px;
+  //box-shadow: 3px 0 6px rgba(0,0,0,.24);
+}
+
+.flex-spacer {
+  flex: 1 1 auto;
+}
+
+.container {
+  padding: 0;
+  margin: 0;
+}
