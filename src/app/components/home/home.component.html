@@ -1,6 +1,11 @@
-<div>
-  <p>home works!
-</p>
-
+<div  fxFlexFill class="mapboxgl-canvas">
+  
+  <mgl-map
+      [style]="'mapbox://styles/mapbox/outdoors-v9'"
+      [zoom]="9"
+      [center]="_center"
+      (load)="loadMap($event)"
+  >
+  </mgl-map> 
+  
 </div>
-

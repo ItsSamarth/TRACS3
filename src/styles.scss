@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import '@angular/material/_theming.scss';
+@import '../node_modules/mapbox-gl/dist/mapbox-gl.css';
 
 @import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 
@@ -71,4 +72,11 @@ body > div {
 .container {
   padding: 0;
   margin: 0;
+}
+
+.canvas .mapboxgl-canvas {
+  height: 600px;
+}
+
+.slider-label {
 }
