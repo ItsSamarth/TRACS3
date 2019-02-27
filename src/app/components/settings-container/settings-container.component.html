@@ -1,0 +1,115 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <mat-card fxFlex class="settings-card">
+  <mat-card-title>Settings</mat-card-title>
+  <mat-card-content>
+    <div fxLayout="column " >
+    <h2>General</h2>
+    <div fxLayout="row" fxFlex >
+      <div class="icon-form-field" fxFlex="100">
+        <mat-icon color="accent">my_location</mat-icon>
+        <label>Default Map Location</label>
+        <span class="flex-spacer"></span>
+        <mat-radio-group>
+          <mat-radio-button value="norcal">NorCal</mat-radio-button>
+          <mat-radio-button value="socal">SoCal</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+    <div fxLayout="row" fxFlex >
+        <div class="icon-form-field"fxFlex="50" >
+            <mat-icon color="accent">view_day</mat-icon>
+            <label class="slider-label input-lg" style="align-self: center">Sticky Header</label>
+            <span class="flex-spacer"></span>
+            <mat-slide-toggle
+              [checked]="settings.stickyHeader"
+              (change)="onStickyHeaderToggle($event)">
+            </mat-slide-toggle>
+        </div>
+        <div class="icon-form-field" fxFlex="50" >
+          <mat-icon class="md-14" color="accent">timeline</mat-icon>
+          <label class="slider-label input-lg" style="align-self: center">Display Breadcrumbs</label>
+          <span class="flex-spacer"></span>
+          <mat-slide-toggle
+            [checked]="settings.displayBreadcrumbs"
+            (change)="onDisplayBreadcrumbsToggle($event)">
+          </mat-slide-toggle>
+        </div>
+
+    </div>  
+    <div fxLayout="row" fxFlex >
+        <div class="icon-form-field"fxFlex="50" >
+            <mat-icon color="accent">check_circle_outline</mat-icon>
+            <label class="slider-label input-lg" style="align-self: center">Clear Checkboxes on Open</label>
+            <span class="flex-spacer"></span>
+            <mat-slide-toggle
+              [checked]="settings.stickyHeader"
+              (change)="oncClearCheckboxesOnOpenToggle($event)">
+            </mat-slide-toggle>
+        </div>
+        <div class="icon-form-field" fxFlex="50" >
+          <mat-icon class="md-14" color="accent">terrain</mat-icon>
+          <label class="slider-label input-lg" style="align-self: center">Display Legend</label>
+          <span class="flex-spacer"></span>
+          <mat-slide-toggle
+            [checked]="settings.displayBreadcrumbs"
+            (change)="onDisplayLegendToggle($event)">
+          </mat-slide-toggle>
+        </div>
+    </div>
+
+
+      <div fxLayout="row">
+
+          <div fxLayout="column" fxFlex="50">
+              <h2>Themes</h2>
+           <div class="icon-form-field"fxFlex="50" >
+              <mat-icon color="accent">brush</mat-icon>
+              <mat-select placeholder="Color Theme" fxFlex="45">
+                  <mat-option *ngFor="let t of themes" [value]="t.value">
+                   {{t.label}}
+                  </mat-option>
+              </mat-select>
+          </div>
+          <div class="icon-form-field" fxFlex="50" >
+            <mat-icon color="accent">brightness_medium</mat-icon>
+            <label class="slider-label input-lg" style="align-self: center">Auto night mode (from 21:00 to 7:00) </label>
+            <span class="flex-spacer"></span>
+            <mat-slide-toggle
+              [checked]="settings.displayBreadcrumbs"
+              (change)="onAutoNightModeToggle($event)">
+            </mat-slide-toggle>
+          </div>
+        </div>
+
+
+        <div fxLayout="column" fxFlex>
+            <h2>Animations</h2>
+          <div class="icon-form-field"fxFlex="50" >
+              <mat-icon color="accent">input</mat-icon>
+              <label class="slider-label input-lg" style="align-self: center">Navigation whole page transition </label>
+              <span class="flex-spacer"></span>
+              <mat-slide-toggle class="flex-spacer"
+                [checked]="settings.stickyHeader"
+                (change)="onAnimateWholePageTransitionToggle($event)">
+              </mat-slide-toggle>
+          </div>
+          <div class="icon-form-field" fxFlex="50" >
+            <mat-icon color="accent">open_in_browser</mat-icon>
+            <label class="slider-label input-lg" style="align-self: center">Navigation page elements slide up</label>
+            <span class="flex-spacer"></span>
+            <mat-slide-toggle
+              [checked]="settings.displayBreadcrumbs"
+              (change)="onPageElementsSlideUpToggle($event)">
+            </mat-slide-toggle>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+
+  </mat-card-content>
+  <mat-card-actions>
+    <button class="mat-raised-button"(click)="close()">Save</button>
+  </mat-card-actions>
+</mat-card>
+</div>
