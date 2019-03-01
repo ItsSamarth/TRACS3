@@ -1,20 +1,20 @@
 <div style="height: 100vh;">
 
   <mat-toolbar color="primary">
-    <a routerLink="/home"><span><img class="navBar-img" src="/assets/CAP-Seal-75x75.png" height=60 width=60 ></span></a>
+    <a routerLink="/home"><span><img class="navBar-img" src="/assets/CAP-Seal-75x75.png" height=60 width=60></span></a>
 
     <span class="lg-view" fxHide.lt-md>
       <b class="cawg">CAWG</b>&nbsp;&nbsp;
       <b class="cawg-header">T</b><span class="cawg-text">racking and </span>
       <b class="cawg-header">R</b><span class="cawg-text">emote&nbsp;</span>
-      <b class="cawg-header">A</b><span class="cawg-text">ircraft&nbsp;</span> 
+      <b class="cawg-header">A</b><span class="cawg-text">ircraft&nbsp;</span>
       <b class="cawg-header">C</b><span class="cawg-text">ommunication&nbsp;</span>
       <b class="cawg-header">S</b><span class="cawg-text">ystem (TRACS) </span>
       <span class="cawg-text">3.0</span>
-  </span>
-  <span class="sm-view" fxHide.gt-sm>
-    <b class="cawg-text">TRACS3</b>
-  </span>
+    </span>
+    <span class="sm-view" fxHide.gt-sm>
+      <b class="cawg-text">TRACS3</b>
+    </span>
 
     <span class="flex-spacer"></span>
 
@@ -25,8 +25,8 @@
       <button mat-icon-button class="d-none d-sm-inline" [matMenuTriggerFor]="menu">
         <mat-icon>menu</mat-icon>
       </button>
-    <mat-menu #menu="matMenu" [overlapTrigger]="false">
-        <button mat-menu-item >
+      <mat-menu #menu="matMenu" [overlapTrigger]="false">
+        <button mat-menu-item>
           <mat-icon>airplanemode_active</mat-icon>
           <span>Real-time Tracking</span>
         </button>
@@ -46,28 +46,30 @@
           <mat-icon>grid_off</mat-icon>
           <span>Grids Off</span>
         </button>
-    </mat-menu>
-    <button mat-icon-button  routerLink="/settings" class="d-none d-sm-inline">
+      </mat-menu>
+      <button mat-icon-button routerLink="/settings" class="d-none d-sm-inline">
         <mat-icon>settings</mat-icon>
-    </button>
-    <button mat-icon-button routerLink=""  class="d-none d-sm-inline">
-      <mat-icon>chat_bubble_outline</mat-icon>
-    </button>
-    <button mat-icon-button routerLink="/bugreport"  class="d-none d-sm-inline">
-      <mat-icon>bug_report</mat-icon>
-    </button>
-    <button mat-icon-button routerLink="/about"  class="d-none d-sm-inline">
-      <mat-icon>info</mat-icon>
-    </button>
-    <button mat-button routerLink="login"  class="nav-button">
-      Sign In
-    </button>
+      </button>
+      <button mat-icon-button routerLink="" class="d-none d-sm-inline">
+        <mat-icon>chat_bubble_outline</mat-icon>
+      </button>
+      <button mat-icon-button routerLink="/bugreport" class="d-none d-sm-inline">
+        <mat-icon>bug_report</mat-icon>
+      </button>
+      <button mat-icon-button routerLink="/about" class="d-none d-sm-inline">
+        <mat-icon>info</mat-icon>
+      </button>
+      <button mat-button routerLink="login" class="nav-button">
+        Sign In
+      </button>
 
     </div>
 
     <div fxShow="true" fxHide.gt-sm="true">
 
-      <a href="#" (click)="sidenav.toggle()"><mat-icon aria-label="Side nav toggle icon" >menu</mat-icon></a>
+      <a (click)="sidenav.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </a>
 
     </div>
 
@@ -81,55 +83,56 @@
 
 
         <mat-nav-list>
-          <mat-list-item >
-          <mat-icon>airplanemode_active</mat-icon>
-          <a matLine href="#" >Real-Time Tracking</a>
-        </mat-list-item>
-        <mat-list-item >
-          <mat-icon svgIcon="historical-tracking-black-48" style="color: black;"></mat-icon>
-          <a matLine href="#" >Historical Tracking</a>
-        </mat-list-item>
-        <mat-list-item >
+          <mat-list-item>
+            <mat-icon>airplanemode_active</mat-icon>
+            <a matLine>Real-Time Tracking</a>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon svgIcon="historical-tracking-black-48" style="color: black;"></mat-icon>
+            <a matLine>Historical Tracking</a>
+          </mat-list-item>
+          <mat-list-item>
             <mat-icon>grid_on</mat-icon>
-            <a matLine href="#" >Display Grids</a>
-        </mat-list-item>
-        <mat-list-item >
+            <a matLine>Display Grids</a>
+          </mat-list-item>
+          <mat-list-item>
             <mat-icon>airplanemode_inactive</mat-icon>
-            <a matLine href="#" >Stop Tracking</a>
-        </mat-list-item>
-        <mat-list-item >
+            <a matLine>Stop Tracking</a>
+          </mat-list-item>
+          <mat-list-item>
             <mat-icon>grid_off</mat-icon>
-            <a matLine href="#" >Grids Off</a>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon>settings</mat-icon>
-          <a matLine routerLink="/settings" >Settings</a> 
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon>chat_bubble_outline</mat-icon>
-          <a matLine href="#" >Toggle Chat Window</a> 
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon>bug_report</mat-icon>
-          <a matLine routerLink="/bugreport" >Report Issue</a>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon>info</mat-icon>
-          <a matLine routerLink-="about" >About</a>
-        </mat-list-item>
-        <mat-list-item>
-          <a matLine routerLink="login" >Sign In</a>
-        </mat-list-item>
+            <a matLine>Grids Off</a>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon>settings</mat-icon>
+            <a matLine routerLink="/settings">Settings</a>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon>chat_bubble_outline</mat-icon>
+            <a matLine>Toggle Chat Window</a>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon>bug_report</mat-icon>
+            <a matLine routerLink="/bugreport">Report Issue</a>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon>info</mat-icon>
+            <a matLine routerLink-="about">About</a>
+          </mat-list-item>
+          <mat-list-item>
+            <a matLine routerLink="login">Sign In</a>
+          </mat-list-item>
         </mat-nav-list>
 
       </div>
 
     </mat-sidenav>
 
-    <mat-sidenav-content fxFlexFill><router-outlet></router-outlet><ng-content></ng-content></mat-sidenav-content>
+    <mat-sidenav-content fxFlexFill>
+      <router-outlet></router-outlet>
+      <ng-content></ng-content>
+    </mat-sidenav-content>
 
   </mat-sidenav-container>
 
 </div>
-
-
